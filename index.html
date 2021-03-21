@@ -1,15 +1,138 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>buycycle.name</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="./image/favicon.ico">
+    <style>
+        body {
+            color: #8D818C;
+            font-size: 12pt;
+        }
+
+        a:link {
+            color: #d61515;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #d61515;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #b3611f;
+            text-decoration: underline;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+
+        iframe {
+            margin: auto;
+        }
+
+        .movie {
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <br/><br/>
-    <div align="center"><img src="./image/page/buycycle.png"></div>
+    <br />
+    <div style="text-align: center;"><img src="./image/page/buycycle.svg" width="500"></div>
+    <br />
+    <div style="text-align: center; color: #A5A299;">
+        <a href="index.html">이게 뭔가요?</a> |
+        <a href="started.html">시작하기</a> |
+        <a href="https://github.com/yalsooni/buycycle/releases" target="_blank">다운로드</a> |
+        <a href="https://github.com/yalsooni/buycycle" target="_blank">GitHub</a>
+    </div>
+    <div style="text-align: center; color: #A5A299; margin-top:10px">
+        <a href="#whatits">이게 뭔가요?</a> |
+        <a href="#architecture">아키텍처</a> |
+        <a href="#testview">구경하기</a> |
+        <a href="#license">라이선스</a>
+    </div>
+    <br /><br />
+    <div>
+        <ul>
+            <table style="margin: auto; width: 80%;">
+                <tr>
+                    <td style="font-size: 20pt;">
+                        <li id="whatits">이게 뭔가요 ?</li>
+                        <hr style="border: 1px dashed #B4B8C5;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        'Buycycle'은 증권사 API를 HTTP Json으로 요청 및 응답 받을 수 있습니다. <br />
+                        요청 받은 Json 메시지를 증권사 API 양식에 맞게 변환해 주는 자바 기반의 오픈 소스 입니다. <br />
+                        HTTP RESTful을 제공함으로써 사용자는 개발 언어에 국한되지 않습니다. <br /><br />
+                        빠른 접근을 위해 'Buycycle' 모듈을 기동 시 웹 화면을 제공하며, 증권사 API에서 제공하는 요청 목록을 열람할 수 있습니다.<br />
+                        또한 웹 화면에서 테스트도 가능합니다.<br />
+                        현재는 이베스트투자증권 API만 구현 되어 있으나 기타 증권사도 지원할 예정 입니다. <br /><br />
+                        <div style="color: #ff0000;font-weight:bold;">본 모듈은 오픈소스로서 잠재적 버그가 존재 할 수 있으며 사용 책임은 사용자에게 있습니다.
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 20pt;padding-top: 60px;">
+                        <li id="architecture">아키텍처</li>
+                        <hr style="border: 1px dashed #B4B8C5;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="text-align: center;">
+                            <img src="./image/page/buycycle_arch.svg" width="1000">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>HTTP 및 웹소켓 사용을 위해 접근성이 뛰어난 Spring Boot를 활용 합니다. </li>
+                            <li>증권사에서 제공하는 COM버전의 API 사용을 위해 Com4J 라이브러리를 활용 합니다. </li>
+                            <li>실시간성 데이터는 웹소켓을 활용 하여 백엔드와 인터페이스 합니다. </li>
+                            <li>단발성 요청은 HTTP POST method를 사용합니다. </li>
+                            <li>모든 요청 및 응답 메시지는 Json을 활용 합니다. </li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 20pt;padding-top: 60px;">
+                        <li id="testview">구경하기</li>
+                        <hr style="border: 1px dashed #B4B8C5;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="movie">
+                            <iframe width="80%" height="600" src="https://www.youtube.com/embed/rD5R_XTzDis"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 20pt;padding-top: 60px;">
+                        <li id="license">라이선스</li>
+                        <hr style="border: 1px dashed #B4B8C5;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="https://github.com/yalsooni/buycycle/blob/1.0.x/LICENSE" target="_blank">라이선스 정보</a>
+                    </td>
+                </tr>
+            </table>
+        </ul>
+    </div>
 </body>
+
 </html>
-
-

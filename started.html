@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>buycycle.name</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="./image/favicon.ico">
+    <style>
+        body {
+            color: #8D818C;
+            font-size: 12pt;
+        }
+
+        a:link {
+            color: #d61515;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #d61515;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #b3611f;
+            text-decoration: underline;
+        }
+
+        .apitable {
+            width: 100%;
+            border-collapse: collapse;
+            margin: auto;
+            font-size: 11pt;
+        }
+
+        .apitable th {
+            background: #eeeeee;
+        }
+        .apitable th,
+        .apitable td {
+            border: 1px solid black;
+            padding-left: 10px;
+        }
+        li {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <br />
+    <div style="text-align: center;"><img src="./image/page/buycycle.svg" width="500"></div>
+    <br />
+    <div style="text-align: center; color: #A5A299;">
+        <a href="index.html">이게 뭔가요?</a> |
+        <a href="started.html">시작하기</a> |
+        <a href="https://github.com/yalsooni/buycycle/releases" target="_blank">다운로드</a> |
+        <a href="https://github.com/yalsooni/buycycle" target="_blank">GitHub</a>
+    </div>
+    <div style="text-align: center; color: #A5A299; margin-top:10px">
+        <a href="#">지원 증권사</a> |
+        <a href="#setup">환경 구축</a> |
+        <a href="#buycycle">Buycycle 실행</a> |
+        <a href="#api">API</a>
+    </div>
+    <br /><br />
+    <div>
+        <ul>
+            <table style="margin: auto; width: 80%;">
+                <tr>
+                    <td style="font-size: 20pt;">
+                        <li>지원 증권사</li>
+                        <hr style="border: 1px dashed #B4B8C5;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li><a href="https://www.ebestsec.co.kr/xingapi/xingMain.jsp?left_menu_no=360&front_menu_no=1293&parent_menu_no=603&left_menu_no=360&front_menu_no=603&parent_menu_no=360"
+                                    target="_blank">이베스트투자증권</a></li>                            
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 20pt;padding-top: 60px;">
+                        <li id="setup">환경 구축</li>
+                        <hr style="border: 1px dashed #B4B8C5;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>OS : Window 10</li>
+                            <li>JDK 1.8 32bit 설치</li>
+                            <li>eBest xing api 설치</li>
+                            <li>eBest DevCenter 실행 하여 모든 RES 파일 다운로드</li>                            
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 20pt;padding-top: 60px;">
+                        <li id="buycycle">Buycycle 실행</li>
+                        <hr style="border: 1px dashed #B4B8C5;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li><a href="https://github.com/yalsooni/buycycle/releases" target="_blank">GitHub release</a> 페이지에서 buycycle.zip 파일을 다운 받습니다.</li>
+                            <li>압축을 풀고 buycycle/config 디렉토리의 application.yaml 설정 파일을 엽니다. <br/><br/><img src="image/page/config.png" /></li>
+                            <li>증권사의 id, 패스워드, 공동인증서 패스워드를 입력 합니다.</li>
+                            <li>buycycle/startBuycycle.bat 파일을 실행합니다. <br/><br/><img src="image/page/started.png"/></li>
+                            <li>http://localhost:7771 브라우저로 접근하여 API 명세 및 테스트가 가능 합니다.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-size: 20pt;padding-top: 60px;">
+                        <li id="api">API</li>
+                        <hr style="border: 1px dashed #B4B8C5;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="apitable">
+                            <tr>
+                                <th>Protocol</th>
+                                <th>메시지</th>
+                                <th>URL</th>
+                                <th>내용</th>
+                            </tr>
+                            <tr>
+                                <td>HTTP</td>
+                                <td>Json</td>
+                                <td>/data/ebest/list/real</td>
+                                <td>XAReal TR 목록을 반환 한다.</td>
+                            </tr>
+                            <tr>
+                                <td>HTTP</td>
+                                <td>Json</td>
+                                <td>/data/ebest/list/real/{trName}</td>
+                                <td>XAReal 특정 TR의 명세를 반환 한다.</td>
+                            </tr>
+                            <tr>
+                                <td>HTTP</td>
+                                <td>Json</td>
+                                <td>/data/ebest/list/query</td>
+                                <td>XAQuery TR 목록을 반환 한다.</td>
+                            </tr>
+                            <tr>
+                                <td>HTTP</td>
+                                <td>Json</td>
+                                <td>/data/ebest/list/query/{trName}</td>
+                                <td>XAQuery 특정 TR의 명세를 반환 한다.</td>
+                            </tr>
+                            <tr>
+                                <td>HTTP</td>
+                                <td>Json</td>
+                                <td>/data/ebest/requestmessage/{trName}</td>
+                                <td>특정 TR의 요청 샘플 메시지를 반환 한다.</td>
+                            </tr>
+                            <tr>
+                                <td>HTTP - POST</td>
+                                <td>Json</td>
+                                <td>/data/ebest/query</td>
+                                <td>XAQuery (Reqest/Response) TR을 호출 한다.</td>
+                            </tr>
+                            <tr>
+                                <td>WebSocket</td>
+                                <td>Json</td>
+                                <td>/data/ebest/real</td>
+                                <td>XAReal TR을 호출 한다.</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </ul>
+    </div>
+</body>
+
+</html>
